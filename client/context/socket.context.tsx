@@ -20,7 +20,7 @@ interface Context {
   messages?: Message[];
   setMessages: Function;
   roomId?: string;
-  rooms: { [key: string]: Room };
+  rooms: Record<string, { name: string }>;
 }
 
 const socket = io(SOCKET_URL);
@@ -56,14 +56,20 @@ function SocketsProvider(props: any) {
   });
 
   useEffect(() => {
-    socket.on(EVENTS.SERVER.ROOM_MESSAGE, ({ message, username, time }) => {
+    const handleRoomMessage = ({ message, username, time }: Message) => {
       if (!document.hasFocus()) {
         document.title = 'New message...';
       }
 
       setMessages((messages) => [...messages, { message, username, time }]);
-    });
-  }, []);
+    };
+
+    socket.on(EVENTS.SERVER.ROOM_MESSAGE, handleRoomMessage);
+
+    return () => {
+      socket.off(EVENTS.SERVER.ROOM_MESSAGE, handleRoomMessage);
+    };
+  }, [socket]);
 
   return (
     <SocketContext.Provider
