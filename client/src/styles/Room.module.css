@@ -1,0 +1,53 @@
+.wrapper {
+  width: 250px;
+  background-color: #1f1f23;
+  height: 100vh;
+  padding: 1rem;
+  /* border-right: solid 2px #efeff1; */
+}
+
+.createRoomWrapper {
+  padding-bottom: 1rem;
+  border-bottom: solid 1px #efeff1;
+}
+
+.createRoomWrapper button,
+.createRoomWrapper input {
+  width: 100%;
+}
+
+.createRoomWrapper input {
+  margin-bottom: 0.5rem;
+  border: 2px solid #3d3d40;
+  background-color: #3d3d40;
+  color: #efeff1;
+}
+
+.createRoomWrapper input:focus {
+  outline-color: transparent;
+  outline-style: none;
+  border-color: #a970ff;
+  background-color: #0e0e10;
+  color: #fff;
+}
+
+.roomList {
+  list-style: none;
+  padding: 0;
+}
+
+.roomList button {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  background-color: #3d3d40;
+  display: flex;
+  cursor: pointer;
+}
+.roomList button:disabled {
+  background-color: #3c3c417c;
+  cursor: default;
+}
+.roomList button span {
+  flex: 1;
+  text-align: left;
+}

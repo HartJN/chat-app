@@ -1,0 +1,45 @@
+.container {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+}
+
+.usernameWrapper {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.usernameInner {
+  display: flex;
+  background-color: #1f1f23;
+  padding: 5rem;
+  border-radius: 8px;
+}
+
+.usernameInner input,
+.usernameInner button {
+  font-size: 1.25rem;
+}
+
+.usernameInner input {
+  border: 2px solid #3d3d40;
+  background-color: #3d3d40;
+  color: #efeff1;
+}
+
+.usernameInner input:focus {
+  outline-color: transparent;
+  outline-style: none;
+  border-color: #a970ff;
+  background-color: #0e0e10;
+  color: #fff;
+}
+
+.usernameInner button {
+  margin-left: 1rem;
+  background-color: #a970ff;
+}
